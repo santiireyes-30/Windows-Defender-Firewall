@@ -12,9 +12,9 @@ Este proyecto se centra únicamente en crear reglas y comprender cómo funcionan
 
 ### Pasos y Documentación del Proyecto
 
-1. El estado de Firewall lo pondrémos en privado, ya que estoy en la red de mi casa
+1. El estado de Firewall lo pondrémos en privado, ya que el protecto lo he realizado en mi propia red local
 
-2. Bloqueamos Telnet, ya que no suele usar cifrado, y alguien que sepa utilizar wireshark nos puede capturar el paquete y esto realmente podría ser peligroso dependiendo la información que manejaremos sobre ese paquete "descuidado por asi decirlo". Más alla de que puede estar bloqueado realmente quiero que nos aseguremos y mitiguemos ese puerto.
+2. Bloqueamos Telnet (en la mayoría ya sule estar bloqueado por defecto pero debemos verficar), ya que no suele usar cifrado, y alguien que sepa utilizar la herramienta wireshark nos puede capturar el paquete y desifrar lo que hay en el, y esto realmente podría ser peligroso dependiendo la información que contenga ese paquete. Más alla de que puede estar bloqueado realmente quiero que nos aseguremos y mitiguemos ese puerto.
 
 3. Luego Bloquearemos FTP
 
