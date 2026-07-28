@@ -14,13 +14,13 @@ Este proyecto se centra únicamente en crear reglas y comprender cómo funcionan
 
 1. El estado de Firewall lo pondrémos en privado, ya que el protecto lo he realizado en mi propia red local
 
-2. Bloqueamos Telnet (en la mayoría ya sule estar bloqueado por defecto pero debemos verficar), ya que no suele usar cifrado, y alguien que sepa utilizar la herramienta wireshark nos puede capturar el paquete y desifrar lo que hay en el, y esto realmente podría ser peligroso dependiendo la información que contenga ese paquete. Más alla de que puede estar bloqueado realmente quiero que nos aseguremos y mitiguemos ese puerto.
+2. Bloqueamos Telnet (en la mayoría ya suele estar bloqueado por defecto pero debemos verficar), ya que no suele usar cifrado, y alguien que sepa utilizar la herramienta wireshark nos puede capturar el paquete y desifrar lo que hay en el, y esto realmente podría ser peligroso dependiendo la información que contenga ese paquete. Más alla de que puede estar bloqueado como mencionamos anteriormente, realmente quiero que nos aseguremos y mitiguemos ese puerto.
 
 3. Luego Bloquearemos FTP
 
-#### ¿Por qué bloquear FTP?
+¿Por qué bloquear FTP?
 
-Porque, igual que Telnet, FTP tampoco cifra la información. Por ejemplo, si subes un archivo: archivo.pdf
+Porque, igual que Telnet, FTP tampoco cifra la información. ejemplo, se sube un archivo: archivo.pdf
 y además escribes tu usuario y contraseña puede viajar en texto plano.
 
 Hay que recalcar que si existe un servidor FTP, cualquier persona podría intentar:
@@ -35,14 +35,15 @@ Hay que recalcar que si existe un servidor FTP, cualquier persona podría intent
 - Registrar paquetes descartados:   SI
 - Registrar conexiones correctas:   SI
 
-¿Por qué registrar paquetes descartados?
+Por qué registrar paquetes descartados?
 
 Porque como acabamos de crear reglas como:
 
 Bloquear Telnet (23).
 Bloquear FTP (21).
 
-Cuando alguien intente usar esos puertos, el firewall dejará una evidencia en el archivo de log. Por ejemplo, si un equipo intenta conectarse al puerto 23, el firewall registrará algo equivalente a:
+Cuando alguien intente usar esos puertos, el firewall dejará una evidencia en el archivo de log. Por ejemplo, si un equipo intenta conectarse al puerto 23, el firewall registrará algo como:
+
 - "La IP 192.168.1.10 intentó conectarse al puerto 23 de mi equipo a las 20:15, y la conexión fue bloqueada."
 
 Como ya hemos creado la regla para bloquearlo, el firewall registrará algo parecido a:
@@ -55,17 +56,4 @@ Como ya hemos creado la regla para bloquearlo, el firewall registrará algo pare
 - Puerto de destino (23).
 - Acción realizada (DROP, es decir, bloqueado).
 
-Con esa información puedes responder preguntas como:
-
-- Quién intentó conectarse?
-- Cuándo ocurrió?
-- A qué puerto?
-- El firewall lo bloqueó?
-
-Segundo ejemoplo: Conexión permitida
-
-Una vez ya activado Log successful connections, el firewall registrará cuando una conexión sea permitida.
-
-Por ejemplo: Un navegador accede a una página web por HTTPS (443) o una aplicación autorizada establece una conexión.
-
-Así vemos que se bloqueó como lo que se permitió.
+Con esa información podemos saber quién intentó conectarse, cuándo ocurrió, a qué puerto?, y si el firewall lo bloqueó.
