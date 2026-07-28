@@ -10,7 +10,7 @@ Este proyecto se centra únicamente en crear reglas y comprender cómo funcionan
 - PowerShell
 - Test-NetConnection
 
-### Pasos del Proyecto
+### Pasos y Documentación del Proyecto
 
 1. El estado de Firewall lo pondrémos en privado, ya que estoy en la red de mi casa
 
