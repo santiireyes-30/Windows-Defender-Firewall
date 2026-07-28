@@ -4,7 +4,7 @@ Creación de reglas especializadas para mitigar y bloquear tráfico malicioso an
 
 Este proyecto se centra únicamente en crear reglas y comprender cómo funcionan.
 
-### Tecnologías que vamos a usar para el proyecto:
+### Tecnologías que usamos para el proyecto:
 
 - Windows Defender Firewall with Advanced Security
 - PowerShell
